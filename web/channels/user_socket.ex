@@ -6,8 +6,8 @@ defmodule Callmemd.UserSocket do
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket,
-   timeout: 45_000
-   end
+    timeout: 45_000
+end
   # transport :longpoll, Phoenix.Transports.LongPoll
 
   # Socket params are passed from the client and can
@@ -36,5 +36,3 @@ defmodule Callmemd.UserSocket do
   #
   # Returning `nil` makes this socket anonymous.
   def id(_socket), do: nil
-end
-end
