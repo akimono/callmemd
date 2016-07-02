@@ -81,6 +81,18 @@ config :Callmemd, Callmemd.Repo,
 # which should be versioned separately.
 use Mix.Config
 
+config :callmemd, Callmemd.Endpoint,
+  http: [post: {:system, "PORT"}],
+  secret_key_base: System.get_env("SECRET_KEY_BASE"),
+  cache_static_manifest: "priv/static/manifest.json",
+  secret_key_base: System.get_env("SECRET_KEY_BASE")
+
 # In this file, we keep production configuration that
 # you likely want to automate and keep it away from
 # your version control system.
+# Configure the database 
+config :callmemd, Callmemd.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  url: System.get_env("DATABASE_URL"),
+  pool_size: String.to_integer(System.get_env("POOL_SIZE") || 10),
+  ssl: true

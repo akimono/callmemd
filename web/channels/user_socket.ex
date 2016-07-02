@@ -7,6 +7,7 @@ defmodule Callmemd.UserSocket do
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket,
     timeout: 45_000
+    end
 
   # transport :longpoll, Phoenix.Transports.LongPoll
 
